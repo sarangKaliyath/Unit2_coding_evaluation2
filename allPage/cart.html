@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+
+<html>
+
+<head>
+    <title>My Cart</title>
+</head>
+<style>
+    .imageWidth {
+        width: 200px;
+        height: 200px;
+    }
+
+    .border {
+        border: 1px solid black;
+        width: 300px;
+    }
+</style>
+
+<body>
+
+    <div id="navbar">
+        <button id="productPage" onclick="Home()">Home</button>
+        <button id="Home" onclick="myCart()">My Cart</button>
+        <button id="checkout" onclick="checkOut()">Check out</button>
+    </div>
+    <div id="total"></div>
+    <div id="discount"></div>
+    <input type="text" id="promo" placeholder="Enter Promo Code"/>
+    <button id="myPromo" onclick="getPromo()">Apply Code</button>
+    <div id="mainBox">
+
+        <div id="products"></div>
+
+    </div>
+
+
+    
+
+
+</body>
+
+</html>
+
+<script src="cart.js"></script>

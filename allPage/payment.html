@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Payment</title>
+</head>
+
+<body>
+
+    <div id="navbar">
+        <button id="productPage" onclick="Home()">Home</button>
+        <button id="Home" onclick="myCart()">My Cart</button>
+        <button id="checkout" onclick="checkOut()">Check out</button>
+    </div>
+    <h1>Payment page!</h1>
+    <div id="data"></div>
+    <div id="address"></div>
+
+    <input type="text" id="card" placeholder="Enter card Details">
+
+    <button onclick="displayMsg()">Place order</button>
+
+</body>
+
+</html>
+
+<script>
+
+    
+        function myCart() {
+            window.location.href = "cart.html";
+        }
+
+        function Home() {
+            window.location.href = "product.html";
+        }
+
+
+        function checkOut() {
+            window.location.href = "checkOut.html";
+        }
+
+        var data = JSON.parse(localStorage.getItem("address"));
+
+        var total = JSON.parse(localStorage.getItem("total"));
+
+        var discount = JSON.parse(localStorage.getItem("discount"));
+
+        var div = document.getElementById("data");
+        var temp_data = document.createElement("h2");
+        temp_data.innerHTML = null;
+
+        var temp_add = document.getElementById("address");
+
+        var add = document.createElement("h2");
+
+        add.innerHTML = `Delivery Address: ${data}`;
+
+        temp_add.appendChild(add);
+
+        
+
+
+
+        if(discount != 0){
+                
+            temp_data.innerHTML = `Total amount to be paid: ${discount}Rs/-`;
+            div.appendChild(temp_data);
+            
+        }
+        else{
+            temp_data.innerHTML = `Total amount to be paid ${total}Rs/-`
+        }
+
+
+
+        function displayMsg() {
+
+            
+            var cardDet = document.getElementById("card").value;
+            console.log('cardDet:', cardDet)
+
+            if (cardDet != "") {
+                setTimeout(function(){
+
+                    alert("Payment Received");
+
+                },3000)
+            }
+            else {
+                alert("Enter  Correct Card Details");
+            }
+
+        }
+
+</script>
+
